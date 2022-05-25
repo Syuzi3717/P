@@ -38,19 +38,22 @@ namespace my{
 }
 
 template<size_t index>
-struct get_{
+struct get_
+{
     template <typename T1, typename T2>
     T1 get(const my::Pair<T1, T2>&);
 };
 
 template<> 
-struct get_<0>{
+struct get_<0>
+{
     template <typename T1, typename T2>
     static T1 get(const my::Pair<T1, T2>& p){ return p.first;} 
 };
 
 template<>
-struct get_<1>{
+struct get_<1>
+{
     template <typename T1, typename T2>
     static T2 get(const my::Pair<T1, T2>& p){ return p.second;}
 };
